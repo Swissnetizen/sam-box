@@ -5,13 +5,15 @@
     <meta charset="utf-8" />
     <title>Stub Demo - X-Tag</title>
     <link rel="stylesheet" type="text/css" href="x-tag-components.css"/>
-	<link rel="stylesheet" type="text/css" href="../src/main.css"/>
+	<link rel="stylesheet" type="text/css" href="../src/box.css"/>
 
     <script type="text/javascript" src="x-tag-components.js"></script> 
-    <script type="text/javascript" src="../src/main.js"></script>      
+    <script type="text/javascript" src="../src/box.js"></script>      
 	<style>
       sam-box {
         background-color: red;
+        border-radius: 20px;
+        border: 1px solid black;
       }
 	</style>
     <script>
@@ -21,24 +23,27 @@
             width = document.getElementById("width"),
             box = document.querySelector("sam-box");
         box.addEventListener("resize", function () {alert("RESIZED!")});
-        document.querySelector("button").onclick = function {
+        document.querySelector("button").onclick = function () {
           box.height = height.value;
           box.width = width.value;
-          box.base = base;
+          box.base = base.value;
         }
       }
     </script>
 </head>
 
 <body>
-  Sam box lets you define your own units in pixels.
-  For example: 
-    Base of units = 150; Number of units = 2;
-    Actual size = 300px;
-  Base of unit = <input id="base">
-  Number of Units(height) = <input id="height">
-  Number of Units(width) = <input id="width">
+  <p>Sam box lets you define your own units in pixels.
+  For example:<br> 
+    Base of units = 150; Number of units = 2;<br>
+    Actual size = 300px;<br>
+  </p>
+  <p>
+  Base of unit = <input id="base"><br>
+  Number of Units(height) = <input id="height"><br>
+  Number of Units(width) = <input id="width"><br>
   <button>Apply</button>
+  </p>
   <sam-box></sam-box>
 
 

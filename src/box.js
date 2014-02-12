@@ -17,10 +17,10 @@
           return this.xtag.height; 
         },
         set: function (newValue) { 
-          if(newValue === this.xtag.height) return; 
-          this.xtag.height; 
-          this.style.height; 
-          xtag.fireEvent(this, 'resize'); 
+          if(newValue === this.xtag.height  || typeof(+newValue)!== "number") return; 
+          this.xtag.height = +newValue; 
+          this.style.height = this.xtag.base * +newValue + "px"; 
+          xtag.fireEvent(this, "resize"); 
         }
       },
       width: {
@@ -28,10 +28,10 @@
           return this.xtag.width; 
         },
         set: function (newValue) { 
-          if(newValue === this.xtag.width) return; 
-          this.xtag.width; 
-          this.style.width; 
-          xtag.fireEvent(this, 'resize'); 
+          if (newValue === this.xtag.width || typeof(+newValue)!== "number") return; 
+          this.xtag.width = +newValue; 
+          this.style.width = this.xtag.base * +newValue + "px"; 
+          xtag.fireEvent(this, "resize"); 
         }
       },
       base: {
@@ -39,12 +39,13 @@
           return this.xtag.base;
         },
         set: function (newValue) {
-          var style = this.style,
-              xtag = this.xtag;
-          xtag.base = newValue;
-          style.width = xtag.width * xtag.base + "px";
-          style.height = xtag.width * xtag.base; + "px";
-          xtag.fireEvent("resize");
+          var s = this.style,
+              x = this.xtag;
+          if (typeof(+newValue) !== "number") return;
+          x.base = +newValue;
+          s.height = x.height * x.base + "px";
+          s.width = x.width * x.base + "px";
+          xtag.fireEvent(this, "resize");
         }
       }
     }, 
