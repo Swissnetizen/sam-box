@@ -17,7 +17,7 @@
           return this.xtag.height; 
         },
         set: function (newValue) { 
-          if(newValue === this.xtag.height  || typeof(+newValue)!== "number") return; 
+          if(+newValue === this.xtag.height  || typeof(+newValue)!== "number") return; 
           this.xtag.height = +newValue; 
           this.style.height = this.xtag.base * +newValue + "px"; 
           xtag.fireEvent(this, "resize"); 
@@ -28,7 +28,7 @@
           return this.xtag.width; 
         },
         set: function (newValue) { 
-          if (newValue === this.xtag.width || typeof(+newValue)!== "number") return; 
+          if (+newValue === this.xtag.width || typeof(+newValue)!== "number") return; 
           this.xtag.width = +newValue; 
           this.style.width = this.xtag.base * +newValue + "px"; 
           xtag.fireEvent(this, "resize"); 
