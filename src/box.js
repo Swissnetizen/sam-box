@@ -10,10 +10,11 @@
     accessor.get = eval("function () { \
       return this.xtag["+name+"]; \
     }");
-    accessor.set eval("function (newValue) { \
-      this.xtag["+name+"];                    \
-      this.style["+name+"];                    \
-      this.fireEvent('resize');                 \
+    accessor.set = eval("function (newValue) { \
+      if(newValue === this.xtag["+name+"]) return; \
+      this.xtag["+name+"]; \
+      this.style["+name+"]; \
+      this.fireEvent('resize'); \
     }");
   };
   xtag.register('sam-box', {
@@ -37,13 +38,11 @@
           var style = this.style,
               xtag = this.xtag;
           xtag.base = newValue;
-          style.width = xtag.width * xtag.base;
-          style.height = xtag.width * xtag.base;
+          style.width = xtag.width * xtag.base + "px";
+          style.height = xtag.width * xtag.base; + "px";
           xtag.fireEvent("resize");
         }
-      
       }
-      
     }, 
     methods: {
       }
