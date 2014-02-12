@@ -1,22 +1,5 @@
 (function(){  
   "use strict";
-  // Create your component here
-  // http://x-tags.org/docs
-  //Keepin' it dry!
-  var generateAccessor = function (name) {
-    var accessor =  {};
-    //I hate eval as much as you do,
-    //However it is a necessary evil for being dry here
-    accessor.get = eval("function () { \
-      return this.xtag["+name+"]; \
-    }");
-    accessor.set = eval("function (newValue) { \
-      if(newValue === this.xtag["+name+"]) return; \
-      this.xtag["+name+"]; \
-      this.style["+name+"]; \
-      this.fireEvent('resize'); \
-    }");
-  };
   xtag.register('sam-box', {
     lifecycle: {
       created: function() {},
@@ -28,10 +11,31 @@
     
     },
     accessors: {
-      width: generateAccessor("width"),
-      height: generateAccessor("height"),
+      //TODO: DRY
+      height: {
+        get: function () { 
+          return this.xtag.height; 
+        },
+        set: function (newValue) { 
+          if(newValue === this.xtag.height) return; 
+          this.xtag.height; 
+          this.style.height; 
+          xtag.fireEvent(this, 'resize'); 
+        }
+      },
+      width: {
+        get: function () { 
+          return this.xtag.width; 
+        },
+        set: function (newValue) { 
+          if(newValue === this.xtag.width) return; 
+          this.xtag.width; 
+          this.style.width; 
+          xtag.fireEvent(this, 'resize'); 
+        }
+      },
       base: {
-        get: function {
+        get: function () {
           return this.xtag.base;
         },
         set: function (newValue) {
@@ -45,8 +49,6 @@
       }
     }, 
     methods: {
-      }
-      }
     }
   });
 
