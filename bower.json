@@ -1,6 +1,6 @@
 {
-  "name": "stub",
-  "description": "",
+  "name": "box",
+  "description": "Element like div which allows you to specify your own units of measure",
   "version": "0.1.0",
   "keywords": [
     "web-components",    
