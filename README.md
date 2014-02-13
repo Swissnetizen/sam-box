@@ -1,24 +1,21 @@
 # About
 
-This repo is an X-Tag custom web-component stub that can be used as a starting point when building new elements.  It provides that basic tools and grunt tasks to get started.
+Element like div which allows you to specify your own units of measure.
 
-# Dev Setup
+# Usage
 
 ```
-Fork this repo, rename it, then clone it.
-
-$ npm install	// install bower tasks
-$ bower install	// install components
-$ grunt build   // build the dependencies
-
+<sam-box base="150" height="1" width="2"></sam-box>
+<!-- Specifies a 300px * 150px block element-->
+<script>
+  //Fires whenever the base, height or width are changed.
+  box.addEventListener("resize", alert)
+</script>
 ```
 
 # Links
 
-[X-Tags Docs](http://x-tags.org/docs)
+[Demo](https://rawgithub.com/samarthwiz/sam-box/master/demo/index.html)
 
-[Guide for creating X-Tag Components](https://github.com/x-tag/core/wiki/Creating-X-Tag-Components)
-
-[Using X-Tag components in your applications](https://github.com/x-tag/core/wiki/Using-our-Web-Components-in-Your-Application)
 
 
