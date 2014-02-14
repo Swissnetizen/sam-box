@@ -2,7 +2,11 @@
   "use strict";
   xtag.register('sam-box', {
     lifecycle: {
-      created: function() {},
+      created: function() {
+        this.height = this.height;
+        this.width = this.width;
+        this.base = this.base;
+      },
       inserted: function() {},
       removed: function() {},
       attributeChanged: function() {}
