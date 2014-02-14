@@ -13,6 +13,7 @@
     accessors: {
       //TODO: DRY
       height: {
+        attribute: true,
         get: function () { 
           return this.xtag.height; 
         },
@@ -24,6 +25,7 @@
         }
       },
       width: {
+        attribute: true,
         get: function () { 
           return this.xtag.width; 
         },
@@ -35,6 +37,7 @@
         }
       },
       base: {
+        attribute: true,
         get: function () {
           return this.xtag.base;
         },
