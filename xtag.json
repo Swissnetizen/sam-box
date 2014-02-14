@@ -1,7 +1,7 @@
 {
 	"name": "sam-box",
 	"tagName": "sam-box",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"author": "Samarth AGARWAL",
 	"description": "Element like div which allows you to specify your own units of measure",
 	"demo": "demo/index.html",
@@ -15,9 +15,15 @@
 		"ios": 4
 	},
 	"documentation": {
-		"description": "",
-		"attributes": {},
-		"events": {},
+		"description": "Element like div which allows you to specify your own units of measure, height and width are multiplied by base",
+		"attributes": {
+          "height": "Number of units for height",
+          "width": "Number of Units for width",
+          "base": "Number of pixels for base"
+        },
+		"events": {
+          "resize": "Triggered when height, width or base change"
+        },
 		"methods": {},
 		"getters": {},
 		"setters": {}
