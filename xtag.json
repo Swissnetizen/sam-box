@@ -1,7 +1,7 @@
 {
 	"name": "sam-box",
 	"tagName": "sam-box",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"author": "Samarth AGARWAL",
 	"description": "Element like div which allows you to specify your own units of measure",
 	"demo": "demo/index.html",

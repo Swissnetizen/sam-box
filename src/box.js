@@ -3,9 +3,7 @@
   xtag.register('sam-box', {
     lifecycle: {
       created: function() {
-        this.height = this.height;
-        this.width = this.width;
-        this.base = this.base;
+
       },
       inserted: function() {},
       removed: function() {},
@@ -17,7 +15,7 @@
     accessors: {
       //TODO: DRY
       height: {
-        attribute: true,
+        attribute: {},
         get: function () { 
           return this.xtag.height; 
         },
@@ -29,7 +27,7 @@
         }
       },
       width: {
-        attribute: true,
+        attribute: {},
         get: function () { 
           return this.xtag.width; 
         },
@@ -41,7 +39,7 @@
         }
       },
       base: {
-        attribute: true,
+        attribute: {},
         get: function () {
           return this.xtag.base;
         },
