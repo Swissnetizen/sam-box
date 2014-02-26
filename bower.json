@@ -16,7 +16,7 @@
   "ignore": [
     "demo/",
     "GruntFile.js",
-    "package.json",
+    "package.json"
   ],
   "license": "MPL"
 }
