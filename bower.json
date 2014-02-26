@@ -12,5 +12,10 @@
   ],
   "dependencies": {
     "x-tag-core": "*"
-  }
+  },
+  "ignore": [
+    "demo/",
+    "GruntFile.js",
+    "package.json",
+  ]
 }
