@@ -17,5 +17,6 @@
     "demo/",
     "GruntFile.js",
     "package.json",
-  ]
+  ],
+  "license": "MPL"
 }
